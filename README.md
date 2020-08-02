@@ -10,6 +10,7 @@ A collection of some of the most frequently used Algorithms in C++. This reposit
 6. Floyd Warshall (Dynamic Programming)
 7. Fibonacci Series (Dynamic Programming)
 8. Bellman Ford Single Source Shortest Path
+9. Inorder Preorder and Postorder Traversal
 
 ## Description
 ### 1. Merge Sort
@@ -39,3 +40,16 @@ We can optimize the space used in method 2 by storing the previous two numbers o
 ### 8. Bellman Ford
 The Bellman Ford Algorithm is for solving the Single Pairs Shortest Path problem. The problem is to find shortest distances between a source vertex and every other vertices in a given edge weighted directed Graph. The key rule is: 
 For every edge e = (v1,v2), we update the value of dist[v2] as dist[v1] + Weight[v1][v2] if dist[v2] > dist[v1] + Weight[v1][v2]
+### 9. Tree Traversals (Preorder, Inorder, Postorder)
+The trivial tree traversal algorithms. For the given tree:
+```
+       1
+     /   \
+    2     3
+   / \   /
+  4   5 6
+```
+The Traversals are as follows:
+1) Preorder : 1 2 4 5 3 6 
+2) Inorder : 4 2 5 1 6 3 
+3) PostOrder : 4 5 2 6 3 1 
