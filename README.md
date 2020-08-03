@@ -12,6 +12,7 @@ A collection of some of the most frequently used Algorithms in C++. This reposit
 8. Fibonacci Series (Dynamic Programming)
 9. Bellman Ford Single Source Shortest Path
 10. Inorder Preorder and Postorder Traversal
+11. Determinant Computation
 
 
 ## Description
@@ -62,3 +63,8 @@ We basically ignore half of the elements just after one comparison.
 2) If x matches with middle element, we return the mid index.
 3) Else If x is greater than the mid element, then x can only lie in right half subarray after the mid element. So we recur for right half.
 Else (x is smaller) recur for the left half.
+### 11. Determinant Computation
+The value of determinant of a matrix can be calculated by following procedure –
+For each element of first row or first column get cofactor of those elements and then multiply the element with the determinant of the corresponding cofactor, and finally add them with alternate signs. The procedure is as follows:
+1) As a base case the value of determinant of a 1\*1 matrix is the single value itself.
+2) Minor of an element, is a matrix which we can get by removing row and column of that element from that matrix. Corresponding cofactor is obtained by adding the sign with the minor.
