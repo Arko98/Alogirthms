@@ -6,11 +6,13 @@ A collection of some of the most frequently used Algorithms in C++. This reposit
 2. Greedy Fractional Knapsack
 3. Breadth First Search
 4. Depth First Search
-5. Chain Matrix Multiplication (Dynamic Programming)
-6. Floyd Warshall (Dynamic Programming)
-7. Fibonacci Series (Dynamic Programming)
-8. Bellman Ford Single Source Shortest Path
-9. Inorder Preorder and Postorder Traversal
+5. Binary Search
+6. Chain Matrix Multiplication (Dynamic Programming)
+7. Floyd Warshall (Dynamic Programming)
+8. Fibonacci Series (Dynamic Programming)
+9. Bellman Ford Single Source Shortest Path
+10. Inorder Preorder and Postorder Traversal
+
 
 ## Description
 ### 1. Merge Sort
@@ -53,3 +55,10 @@ The Traversals are as follows:
 1) Preorder : 1 2 4 5 3 6 
 2) Inorder : 4 2 5 1 6 3 
 3) PostOrder : 4 5 2 6 3 1 
+### 10. Binary Search
+Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
+We basically ignore half of the elements just after one comparison. 
+1) Compare x with the middle element.
+2) If x matches with middle element, we return the mid index.
+3) Else If x is greater than the mid element, then x can only lie in right half subarray after the mid element. So we recur for right half.
+Else (x is smaller) recur for the left half.
