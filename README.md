@@ -55,7 +55,7 @@ The trivial tree traversal algorithms. For the given tree:
 The Traversals are as follows:
 1) Preorder : 1 2 4 5 3 6 
 2) Inorder : 4 2 5 1 6 3 
-3) PostOrder : 4 5 2 6 3 1 
+3) Postorder : 4 5 2 6 3 1 
 ### 10. Binary Search
 Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
 We basically ignore half of the elements just after one comparison. 
