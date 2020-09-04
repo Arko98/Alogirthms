@@ -1,5 +1,5 @@
 # Alogirthms
-A collection of some of the most frequently used Algorithms in C++. This repository consists of some of the most frequently used algorithms which can be used as ideal example for learning purpose.
+A collection of some of the most frequently used Algorithms in C++ (cause it's efficent) and Python (cause I love it). This repository consists of some of the most frequently used algorithms which can be used as ideal example for learning purpose.
 
 ## Contents
 1. Merge Sort
