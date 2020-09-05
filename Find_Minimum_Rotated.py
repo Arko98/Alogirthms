@@ -1,7 +1,7 @@
 def find_rotated_min(array,left,right):
   '''
   Function to find minimum element in an increasing sequence 
-  rotated unknown numberof times in O(logn) time
+  rotated unknown number of times in O(logn) time
   '''
   # When search is exhausted, condition not met, array is not rotated then 1st element is smallest
   if right<left:
