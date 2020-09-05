@@ -15,6 +15,7 @@ def find_rotated_min(array,left,right):
   if (mid<right and array[mid+1]<array[mid]):
     return array[mid+1]
   if (array[right]>array[mid]):
+    # Smallest element will be at left sub-array
     return find_rotated_min(array,left,mid-1)
   return find_rotated_min(array,mid+1,right)
 
