@@ -16,3 +16,4 @@ A collection of some of the most frequently used Algorithms in C++ (cause it's e
 12. Local Minima (Divide and Conquer)
 13. Bitonic Point in Bitonic Series (Divide and Conquer)
 14. Closest Pair Problem (Divide and Conquer)
+15. Smallest Element Find in Decreasing then Increasing Sequence (Divide and Conquer)
