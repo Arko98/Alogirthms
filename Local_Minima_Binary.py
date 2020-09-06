@@ -7,9 +7,9 @@ def local_minima(left,right,array):
     return mid
   elif (mid > 0 and array[mid]>array[mid-1]):
     right = mid-1
-    return local_minima(left,right,array[0:mid])
+    return local_minima(left,right,array)
   left = mid+1
-  return local_minima(left,right,array[mid+1:])
+  return local_minima(left,right,array)
 
 A = [4, 33, 14, 29, 5, 40]
 left = 0
