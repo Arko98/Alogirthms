@@ -4,7 +4,7 @@ def local_minima(left,right,array):
   '''
   mid = int((left+right)/2)
   if (mid == 0 or array[mid]<array[mid-1] and mid == len(array)-1 or array[mid]<array[mid+1]):
-    return mid
+    return array[mid]
   elif (mid > 0 and array[mid]>array[mid-1]):
     right = mid-1
     return local_minima(left,right,array)
