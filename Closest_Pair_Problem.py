@@ -1,6 +1,6 @@
 def distance(p,q):
   '''
-  Utility Functio  to find Eucledian Distance of two points
+  Utility Function to find Eucledian Distance between two points
   '''
   dist = ((p[0]-q[0])**2+(p[1]-q[1])**2)**(1/2)
   return dist
