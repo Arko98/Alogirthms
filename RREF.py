@@ -4,6 +4,8 @@ Stage : Developmental
 Many test cases are checked, yet to check some corner cases. If you notice a corner case that gives
 error, please create a branch and update accordingly
 or mail me at: de.arkadipta05@gmail.com, ai20mtech14002@iith.ac.in , arkadipta.de@gcettb.ac.in 
+
+Author: Arkadipta De
 '''
 
 import numpy as np
