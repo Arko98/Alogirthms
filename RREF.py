@@ -34,6 +34,9 @@ def Reduced_Row_Echelon_Form(A):
            2) From last pivot make all elements above the pivot in the column 0's
   '''
   A = Row_Echelon(A)
+  row = A.shape[0]
+  col = A.shape[1]
+  max_piv_pos = min(row,col)           #p = min(row_num,col_num), then (p,p) will be pivot, no need to check sizes 
   for i in range(max_piv_pos-1,0,-1):
     pivot = A[i,i]
     if (pivot == 0):                   #Ignore for 0 pivot
