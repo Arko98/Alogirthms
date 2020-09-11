@@ -7,6 +7,7 @@ or mail me at: de.arkadipta05@gmail.com, ai20mtech14002@iith.ac.in , arkadipta.d
 
 Author: Arkadipta De
 '''
+import numpy as np
 
 def Row_Echelon(A): 
   '''
