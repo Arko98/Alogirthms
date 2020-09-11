@@ -17,4 +17,4 @@ A collection of some of the most frequently used Algorithms in C++ (cause it's e
 13. Bitonic Point in Bitonic Series (Divide and Conquer)
 14. Closest Pair Problem (Divide and Conquer)
 15. Smallest Element Find in Decreasing then Increasing Sequence (Divide and Conquer)
-16. Row Reduced Edchelon Form using Row Echelon Form (Developmental Stage, Many Test Cases Passes, IDK about the corner cases yet)
+16. Row Reduced Edchelon Form using Row Echelon Form (Developmental Stage, Many Test Cases Passes, IDK about the corner cases yet)(Update: Inverse can now be calculated from Augmented matrix)
