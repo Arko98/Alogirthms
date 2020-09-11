@@ -8,8 +8,6 @@ or mail me at: de.arkadipta05@gmail.com, ai20mtech14002@iith.ac.in , arkadipta.d
 Author: Arkadipta De
 '''
 
-import numpy as np
-
 def Row_Echelon(A): 
   '''
   Function to transform a matrix into Row-Echelon Form
@@ -45,6 +43,25 @@ def Reduced_Row_Echelon_Form(A):
       A[j] = A[j] - A[j,i]*A[i]        #Row_j = Row_j - (element below pivot)*Pivot_row to make all 0's above pivot
   return A
 
+def Inverse_Extract(RRE):
+  '''
+  Function to Extract Inverse Matrix from Augmented RRE of a Matrix
+  Input: Augmented RRE Form of a Matrix
+  '''
+  row = A.shape[0]
+  col = A.shape[1]
+  Inv = np.zeros(shape = (int(col/2),int(col/2)),dtype = np.float)
+  Inv_Col = 0
+  for r in range(row):
+    for c in range(int(col/2),col,+1):
+      if(Inv_Col == int(col/2)):
+        Inv_Col = 0
+      Inv[r,Inv_Col] = RRE[r,c]
+      Inv_Col += 1
+  return Inv
+
+# Driver Code
+
 #Test Cases:
 '''
 A = np.array([[3,4,5], 
@@ -55,21 +72,31 @@ A = np.array([[3,4,5],
 A = np.array([[2,1,3,6],
               [1,5,6,4],
               [4,3,2,5]],dtype = np.float) 
-'''
 
+
+'''
+'''
 A = np.array([[2,1,3],
               [1,5,6],
               [4,3,2],
               [6,0,3]],dtype = np.float)
-
-
+'''
 '''
 A = np.array([[2,1,3],
               [1,5,6],
               [4,2,6]],dtype = np.float)
 '''
+'''
+# Augmented Test Case for Inverse Evaluation
+A = np.array([[2,1,3,1,0,0],
+              [1,5,6,0,1,0],
+              [4,3,2,0,0,1]],dtype = np.float)
+''' 
+
 
 RE = Row_Echelon(A)
 print('Row Echelon Form = \n',RE)
 RRE = Reduced_Row_Echelon_Form(A)
 print('\nReduced Row Echelon Form = \n',RRE)
+Inv = Inverse_Extract(RRE)        # Use only for Augmented test case else comment out             
+print('\nInverse Matrix = \n',Inv)
