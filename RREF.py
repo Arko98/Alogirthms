@@ -41,7 +41,7 @@ def Reduced_Row_Echelon_Form(A):
     if (pivot == 0):                   #Ignore for 0 pivot
       continue
     for j in range(i-1,-1,-1):
-      A[j] = A[j] - A[j,i]*A[i]        #Row_j = Row_j - (element below pivot)*Pivot_row to make all 0's above pivot
+      A[j] = A[j] - A[j,i]*A[i]        #Row_j = Row_j - (element above pivot)*Pivot_row to make all 0's above pivot
   return A
 
 def Inverse_Extract(RRE):
