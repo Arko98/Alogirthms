@@ -4,7 +4,7 @@ def max_subarray_cross(array,left,mid,right):
   left_sum = 0
   for i in range(mid-1,left-1,-1):
     inter_sum += array[i]
-    if (left_sum > inter_sum):
+    if (inter_sum > left_sum):
       left_sum = inter_sum
 
   # For right of mid
@@ -12,7 +12,7 @@ def max_subarray_cross(array,left,mid,right):
   right_sum = 0
   for i in range(mid,right+1,1):
     inter_sum += array[i]
-    if (right_sum > inter_sum):
+    if (inter_sum > right_sum):
       right_sum = inter_sum
 
   return max(right_sum + left_sum, left_sum, right_sum)
