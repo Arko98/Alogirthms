@@ -6,7 +6,7 @@ def Smallest_Bitonic(Array,left,right):
     return Array[left]
   mid = (left+right)//2
   if (Array[mid]>Array[mid+1]):
-  # Smallest element will be in left side
+  # Smallest element will be in right side
     return Smallest_Bitonic(Array,mid+1,right)
   return Smallest_Bitonic(Array,left,mid-1)
   
