@@ -25,3 +25,4 @@ A collection of some of the most frequently used Algorithms and advanced algorit
 21. FInd A[i] = i in a sorted array **(Algorithm-Jeff Erickson P-60 Q31)**
 22. QuickSort Alogorithm
 23. Fast Perfect Cube Check Algorithm
+24. Fast Power Raise Algorithm in O(logn)
