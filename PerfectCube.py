@@ -6,6 +6,24 @@ def PerfectCube(Array,left,right,x):
     return 'No'
   else:
     mid = (left+right)//2
+    if (x==mid**3):
+      return 'Yes'
+    elif (x<mid**3):
+      return PerfectCube(Array,left,mid-1,x)
+    else:
+      return PerfectCube(Array,mid+1,right,x)
+
+A = [i for i in range(0,10000)]
+n = 216
+print(PerfectCube(A,0,len(A)-1,n))
+
+'''
+Alernative 1
+def PerfectCube(Array,left,right,x):
+  if (right<left):
+    return 'No'
+  else:
+    mid = (left+right)//2
     if (x**(1/3)==Array[mid]):
       return 'Yes'
     elif (x**(1/3)<Array[mid]):
@@ -16,9 +34,9 @@ def PerfectCube(Array,left,right,x):
 A = [i for i in range(0,10000)]
 n = 
 print(PerfectCube(A,0,len(A)-1,n))
-
 '''
-Alternative Fast Algorithm
+'''
+Alternative Fast Algorithm 2
 def is_perfect_cube(number):
   number = abs(number)
   return round(number**(1 / 3))**3==number
