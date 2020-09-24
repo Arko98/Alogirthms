@@ -2,6 +2,9 @@ global INF
 INF = 10000
 
 def Bellman_Ford(Weight):
+  '''
+  Bellman Ford All-Pair shortest path Traversal Algorithm
+  '''
   dist = [0]+[INF for i in range(len(Weight)-1)]
   edge_list = []
   for i in range(len(Weight)):
