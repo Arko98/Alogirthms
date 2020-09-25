@@ -13,91 +13,83 @@ def Row_Echelon(A):
   '''
   Function to transform a matrix into Row-Echelon Form
   '''
-  row = A.shape[0]
-  col = A.shape[1]
-  max_piv_pos = min(row,col)            #p = min(row_num,col_num), then (p,p) will be pivot, no need to check sizes 
-  for i in range(max_piv_pos):
-    pivot = A[i,i]
-    if (pivot == 0):                    #Ignore for 0 pivot
-      continue
-    A[i] = A[i]/pivot                   #Normalize Pivot, so that pivot = 1
-    for j in range(i+1,A.shape[0],1):
-      A[j] = A[j] - A[j,i]*A[i]         #Row_j = Row_j - (element below pivot)*Pivot_row to make all 0's below pivot
-  return A
+  row = A.shape[0] 
+  column = A.shape[1]
+
+  if row==0 or column==0:
+      return A
+  for i in range(len(A)) :
+      if A[i,0] !=0 :
+          break
+  else:
+      A_Below = Row_Echelon(A[:,1:])
+      return np.hstack([A[:,:1],A_Below])
+  
+  if i>0:
+      ith_row = A[i].copy()
+      A[i] = A[0]
+      A[0] = ith_row 
+    
+  pivot = A[0,0]
+  
+  A[0] = A[0]/pivot                 #Normalize Pivot's Row
+  A[1:] = A[1:] - A[0]*A[1:,0:1]    #Make Pivot Column 0
+
+  A_Below = Row_Echelon(A[1:,1:])  
+  A_Stacked = np.hstack([A[1:,:1],A_Below])
+  return np.vstack([A[:1],A_Stacked])
 
 
 def Reduced_Row_Echelon_Form(A):
   '''
   Function to transform a matrix into Reduced-Row-Echelon Form
-  Process: 1) Make A Row-Echelon
-           2) From last pivot make all elements above the pivot in the column 0's
   '''
   A = Row_Echelon(A)
-  row = A.shape[0]
+  row = A.shape[0]-1
   col = A.shape[1]
-  max_piv_pos = min(row,col)           #p = min(row_num,col_num), then (p,p) will be pivot, no need to check sizes 
-  for i in range(max_piv_pos-1,0,-1):
-    pivot = A[i,i]
-    if (pivot == 0):                   #Ignore for 0 pivot
-      continue
-    for j in range(i-1,-1,-1):
-      A[j] = A[j] - A[j,i]*A[i]        #Row_j = Row_j - (element above pivot)*Pivot_row to make all 0's above pivot
+  while (row > 0):
+      i = row
+      for j in range(col):
+        if A[i,j]==1:
+          while (i > 0):
+            A[i-1] -= A[row]*A[i-1,j]
+            i-=1
+      row-=1
   return A
 
-def Inverse_Extract(RRE):
+def Inverse(A):
   '''
   Function to Extract Inverse Matrix from Augmented RRE of a Matrix
   Input: Augmented RRE Form of a Matrix
   '''
   row = A.shape[0]
   col = A.shape[1]
-  Inv = np.zeros(shape = (int(col/2),int(col/2)),dtype = np.float)
-  Inv_Col = 0
-  for r in range(row):
-    for c in range(int(col/2),col,+1):
-      if(Inv_Col == int(col/2)):
-        Inv_Col = 0
-      Inv[r,Inv_Col] = RRE[r,c]
-      Inv_Col += 1
-  return Inv
-
+  if (row!=col):
+    print("\nInverse Does not exist")
+  elif np.linalg.det(A)==0:
+    print("\nInverse doesn't exist.")
+  else:
+    AI = np.hstack([A,np.identity(row)])
+    AI_RREF = Reduced_Row_Echelon_Form(AI)
+    AI_row = AI_RREF.shape[0]
+    AI_col = AI_RREF.shape[1]
+    return AI_RREF[:,int(AI_col/2):]
+  
 # Driver Code
+A1 = np.array([[1,0,0],[0,1,0],[0,0,1]])
+A2 = np.array([[0,0,1],[1,0,0],[0,1,0]])
+A3 = np.array([[0,0,1,5],[0,1,2,1],[0,1,2,1]])
+A4 = np.array([[1,3,1],[0,2,3],[34,-2,-1]])
+A5 = np.array([[1,2,2],[-2,9,17],[1,0,0],[0,1,0]])
+A6 = np.array([[1,1,1,1,1.0],[1,1,1,1,1],[1,1,1,1,1]])
+A7 = np.array([[1,1,1,1,1.0],[1,1,2,2,2],[1,1,1,4,5]])
+A8 = np.array([[1,1,1,1],[1,1,1,1],[1,2,3,4]])
+A9 = np.array([[1,1,1],[1,1,2],[2,3,1]])
 
-#Test Cases:
-'''
-A = np.array([[3,4,5], 
-              [2,0,4], 
-              [1,0,12]], dtype = np.float)
-'''
-'''
-A = np.array([[2,1,3,6],
-              [1,5,6,4],
-              [4,3,2,5]],dtype = np.float) 
-
-
-'''
-'''
-A = np.array([[2,1,3],
-              [1,5,6],
-              [4,3,2],
-              [6,0,3]],dtype = np.float)
-'''
-'''
-A = np.array([[2,1,3],
-              [1,5,6],
-              [4,2,6]],dtype = np.float)
-'''
-'''
-# Augmented Test Case for Inverse Evaluation
-A = np.array([[2,1,3,1,0,0],
-              [1,5,6,0,1,0],
-              [4,3,2,0,0,1]],dtype = np.float)
-''' 
-
+A = A5
 
 RE = Row_Echelon(A)
 print('Row Echelon Form = \n',RE)
 RRE = Reduced_Row_Echelon_Form(A)
 print('\nReduced Row Echelon Form = \n',RRE)
-Inv = Inverse_Extract(RRE)        # Use only for Augmented test case else comment out             
-print('\nInverse Matrix = \n',Inv)
+print("Inverse = \n",Inverse(A))  
