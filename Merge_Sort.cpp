@@ -1,43 +1,50 @@
 #include<stdio.h>
 
-void merge(int array[],int begin,int mid,int end)
-	{int i=0, j=mid+1, index=0,temp[100];
-	 while(i<=mid && j<=end)
-	 	{if(array[i]<array[j])
-	 		{temp[index] = array[i];
-	 		 i++;
+void merge(int array[], int begin,int mid,int end)
+	{   
+		int i=begin,j=mid+1,index=begin,k=0,temp[100];
+		while (i<=mid && j<=end)
+			{
+				if (array[i]<=array[j])
+					{
+						temp[index]=array[i];
+						i++;
+					}
+				else
+					{
+						temp[index]=array[j];
+						j++;
+					}
+				index++;
 			}
-		 else
-		 	{temp[index] = array[j];
-	 		 j++;
-			}
-		 index++;
-		}
-	 if(i>mid)
-	 	{while(j<=end)
-	 		{temp[index] = array[j];
-	 		 index++;
-	 		 j++;
-			}
-		}
-	 else if(j>end)
-	 	{while(i<=mid)
-	 		{temp[index] = array[i];
-	 		 index++;
-	 		 i++;
-			}
-		}
-	 for(int a=0;a<index;a++)
-	 	 array[a] = temp[a]; 
-	} 
 
-void merge_sort(int array[],int begin,int end)
-	{if(begin<end)
-		{int mid = (begin+end-1)/2;
-		 merge_sort(array,begin,mid);
-		 merge_sort(array,mid+1,end);
-		 merge(array,begin,mid,end);
-		}
+			while(j<=end)
+				{
+					temp[index]=array[j];
+					j++;
+					index++;
+				}
+			while(i<=mid)
+				{
+					temp[index]=array[i];
+					i++;
+					index++;
+			    }
+		for (k=begin;k<=end;k++)
+			{
+				array[k]=temp[k];
+			}
+	}
+
+void mergesort(int array[], int begin, int end)
+	{    
+		if (begin<end)
+			{
+			        int mid = (begin+end)/2;
+				mergesort(array,begin,mid);
+			        mergesort(array,mid+1,end);
+				merge(array,begin,mid,end);
+			}
 	}
 	
 int main()
