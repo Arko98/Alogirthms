@@ -19,7 +19,7 @@ A collection of some of the most frequently used Algorithms and advanced algorit
 15. Find Smallest Element in increasing sequence rotated unknown number of times and rotation number **(Algorithm-Jeff Erickson P-60 Q33)**
 16. Smallest Element Find in Decreasing then Increasing Sequence (Divide and Conquer)
 17. Smallest Element Find in Bitonic Sequence **(Algorithm-Jeff Erickson P-60 Q30)**
-18. Row Reduced Edchelon Form using Row Echelon Form (Developmental Stage, Many Test Cases Passes, IDK about the corner cases yet)(Update: Inverse can now be calculated from Augmented matrix)
+18. Row Reduced Edchelon Form using Row Echelon Form
 19. Maximum Sub Array Sum Problem (Divide and Conquer)
 20. Maximum Sub Array Sum Problem (Kadane's Algorithm)
 21. FInd A[i] = i in a sorted array **(Algorithm-Jeff Erickson P-60 Q31)**
