@@ -1,6 +1,9 @@
 # Alogirthms
 A collection of some of the most frequently used Algorithms and advanced algorithms in C++ (cause it's efficent) and Python (cause I love it). This repository consists of a large collection of algorithms.
 
+# Updates
+I keep updating it from time to time (too frequently)
+
 ## Contents
 1. Merge Sort
 2. Greedy Fractional Knapsack
