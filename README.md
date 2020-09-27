@@ -27,3 +27,4 @@ A collection of some of the most frequently used Algorithms and advanced algorit
 23. Fast Perfect Cube Check Algorithm
 24. Fast Power Raise Algorithm in O(logn)
 25. Fast Kth Root of Element Find in O(logn)
+26. Rabin Karp Algorithm for String Matching O(m+n)
