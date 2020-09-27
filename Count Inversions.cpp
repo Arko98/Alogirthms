@@ -16,8 +16,8 @@ void merge(int array[], int begin,int mid,int end)
 				else
 					{
 					    count += (mid-i+1); 
-						temp[index]=array[j];
-						j++;
+				            temp[index]=array[j];
+					    j++;
 					}
 				index++;
 			}
@@ -46,7 +46,7 @@ void mergesort(int array[], int begin, int end)
 			{
 				int mid = (begin+end)/2;
 				mergesort(array,begin,mid);
-			    mergesort(array,mid+1,end);
+			        mergesort(array,mid+1,end);
 				merge(array,begin,mid,end);
 			}
 	}
