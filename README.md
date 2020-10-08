@@ -35,3 +35,4 @@ I keep updating it from time to time (too frequently)
 28. Find Kth Smallest Element in Unsorted Array O(logn)
 29. Kth Smallest Element in Union of two Sorted Array O(n)
 30. K Closest Elements in Array from First Element of Array O(n)
+31. Gram-Schmidt Orthogonalization of a (m x n) matrix
