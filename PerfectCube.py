@@ -1,4 +1,4 @@
-def PerfectCube(Array,left,right,x):
+def PerfectCube(left,right,x):
   '''
   Fast O(logn) algorithm to find check if an element is perfect cube or not
   '''
@@ -9,13 +9,13 @@ def PerfectCube(Array,left,right,x):
     if (x==mid**3):
       return 'Yes'
     elif (x<mid**3):
-      return PerfectCube(Array,left,mid-1,x)
+      return PerfectCube(left,mid-1,x)
     else:
-      return PerfectCube(Array,mid+1,right,x)
+      return PerfectCube(mid+1,right,x)
 
-A = [i for i in range(0,10000)]
+#A = [i for i in range(0,10000)]
 n = 216
-print(PerfectCube(A,0,len(A)-1,n))
+print(PerfectCube(0,n,n))
 
 '''
 Alernative 1
