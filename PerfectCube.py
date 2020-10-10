@@ -13,7 +13,6 @@ def PerfectCube(left,right,x):
     else:
       return PerfectCube(mid+1,right,x)
 
-#A = [i for i in range(0,10000)]
 n = 216
 print(PerfectCube(0,n,n))
 
