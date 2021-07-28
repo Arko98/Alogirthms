@@ -34,7 +34,6 @@ def mergesort(array, begin, end):
     if (begin < end):
         #mid = (begin + end)//2 
         mid = (begin + (end - 1)) // 2  # Same as line 35 but handles overflow
-        print(begin, mid, end)
         mergesort(array, begin, mid)
         mergesort(array, mid+1, end)
         merge(array, begin, mid, end)
